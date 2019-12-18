@@ -1,0 +1,8 @@
+.card{
+    border: 20px;
+    margin: 10px;
+    box-shadow: bisque;
+}
+.img-container{
+    min-height: 400px;
+}

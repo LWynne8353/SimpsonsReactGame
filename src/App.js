@@ -14,21 +14,40 @@ class App extends Component {
   }
 
 
-  randomize = (id) => {
-    console.log("Clicked!")
-    console.log(id)
+  randomize = id => {   
+     console.log("Clicked!")
+     console.log(id)
 
-    // map over the simpsons state array
-    // within the map do an if(id === characters.id)
-    // if characters.clicked is already true, you lose
-    // else set characters.clicked to true
+    const countSimpsons = this.state.simpsons.map(characters => {
+      if(id === characters.id) {
+        if (characters.clicked === true) {
+          alert("player lost")
+
+        }
+        else {
+          characters.clicked = true;
+        }
+      }
+
+      return characters;
+    });
+
+    this.setState({
+      simpsons: countSimpsons
+    });
+
+    console.log(this.state.simpsons);
+    // map over the simpsons state array -- done
+    // within the map do an if(id === characters.id) -- done
+    // if characters.clicked is already true, you lose -- done
+    // else set characters.clicked to true -- done
     // also increase the score
     // after that, update the state with the new list of characters
     // then shuffle again
-  };
+  }
 
   shuffle = () => {
-    const shuffledSimpsons = this.state.simpsons.sort(function(a, b){return 0.5 - Math.random()});;
+    const shuffledSimpsons = this.state.simpsons.sort(function (a, b) { return 0.5 - Math.random() });;
     this.setState({
       simpsons: shuffledSimpsons
     })

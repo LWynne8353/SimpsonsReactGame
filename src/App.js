@@ -10,8 +10,7 @@ class App extends Component {
     simpsons, 
     clickedCharacter: [], 
     counter: 0, 
-    topScore: 0,
-    score: 0
+    topScore: 0
   };
 
   // componentDidMount() {
@@ -24,16 +23,25 @@ class App extends Component {
     console.log("Clicked!")
     console.log(id)
 
-    let trackingScore = 0;
+    let trackingScore = this.state.counter;
+    //  let zero = this.state.counter;
 
     if (!this.state.clickedCharacter.includes(id)) {
       this.state.clickedCharacter.push(id)
       trackingScore = trackingScore + 1;
+      //this.state.clickedCharacter = true;
       //counter increase
-      this.setState({ score: trackingScore })
+      this.setState({ counter: trackingScore})
       console.log(trackingScore)
     }
-    else if(this.state.clickedCharacter.includes(id)){
+    else if (this.state.clickedCharacter.map(id)){
+      this.state.clickedCharacter.reset(id)
+      // zero = this.state.counter =  0;
+      
+      this.setState({ counter: 0})
+      // console.log (zero)
+
+
       //Game over
       //counter stops
     }
@@ -73,13 +81,20 @@ class App extends Component {
     this.setState({
       simpsons: shuffledSimpsons
     })
+  
+  // scrample = () => {
+  //   const zeroScore = this.state.clickedCharacter.reset(function(){for (i = 0; i < id.length;i ++);
+  //}
   }
 
   render() {
     return (
       <Wrapper>
         <Title>Simpsons Memory Game</Title>
-        <Counter>Count Cards</Counter>
+        <div>
+        <Counter>Score</Counter>
+        {this.state.counter}
+        </div>
         <div className="row">
           {this.state.simpsons.map(characters => (
             <SimpsonsCard

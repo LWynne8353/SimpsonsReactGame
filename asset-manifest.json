@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SimpsonsReactGame/static/css/main.43f65287.chunk.css",
+    "main.js": "/SimpsonsReactGame/static/js/main.f4ff87bf.chunk.js",
+    "main.js.map": "/SimpsonsReactGame/static/js/main.f4ff87bf.chunk.js.map",
+    "runtime-main.js": "/SimpsonsReactGame/static/js/runtime-main.6386d875.js",
+    "runtime-main.js.map": "/SimpsonsReactGame/static/js/runtime-main.6386d875.js.map",
+    "static/js/2.24f315cd.chunk.js": "/SimpsonsReactGame/static/js/2.24f315cd.chunk.js",
+    "static/js/2.24f315cd.chunk.js.map": "/SimpsonsReactGame/static/js/2.24f315cd.chunk.js.map",
+    "index.html": "/SimpsonsReactGame/index.html",
+    "precache-manifest.89061d441b72bc3c4caaf5555b318b80.js": "/SimpsonsReactGame/precache-manifest.89061d441b72bc3c4caaf5555b318b80.js",
+    "service-worker.js": "/SimpsonsReactGame/service-worker.js",
+    "static/css/main.43f65287.chunk.css.map": "/SimpsonsReactGame/static/css/main.43f65287.chunk.css.map",
+    "static/js/2.24f315cd.chunk.js.LICENSE": "/SimpsonsReactGame/static/js/2.24f315cd.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6386d875.js",
+    "static/js/2.24f315cd.chunk.js",
+    "static/css/main.43f65287.chunk.css",
+    "static/js/main.f4ff87bf.chunk.js"
+  ]
+}

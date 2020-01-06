@@ -7,38 +7,37 @@ import simpsons from "./simpsons.json";
 
 class App extends Component {
   state = {
-    simpsons, 
-    clickedCharacter: [], 
-    counter: 0, 
+    simpsons,
+    clickedCharacter: [],
+    counter: 0,
     topScore: 0
   };
 
-  // componentDidMount() {
-  //   this.shuffle();
-  // }
-
-
+  //function to shuffle cards randomly
   randomize = id => {
     this.shuffle();
     console.log("Clicked!")
     console.log(id)
 
+    //variable to update score 
     let trackingScore = this.state.counter;
-    //  let zero = this.state.counter;
-
+    //if statement to allow it to update
     if (!this.state.clickedCharacter.includes(id)) {
-      this.state.clickedCharacter.push(id)
+      const newChars = this.state.clickedCharacter;
+      newChars.push(id);
       trackingScore = trackingScore + 1;
-      //this.state.clickedCharacter = true;
+     
       //counter increase
-      this.setState({ counter: trackingScore})
+      this.setState({
+        clickedCharacter: newChars,
+        counter: trackingScore
+      });
       console.log(trackingScore)
+      console.log(this.state.clickedCharacter)
     }
-    else if (this.state.clickedCharacter.map(id)){
-      this.state.clickedCharacter.reset(id)
-      // zero = this.state.counter =  0;
-      
-      this.setState({ counter: 0})
+    else {
+      // this.state.clickedCharacter.push(id)
+      this.reset()
       // console.log (zero)
 
 
@@ -50,7 +49,7 @@ class App extends Component {
     //     if (characters.clicked === true) {
     //       alert("player lost")
     //     }
-    //     else if (characters.clicked = true){
+    //     else if (characters.clicked === true){
 
     //         // incrementCount(
     //         //   count = this.setState.simpsons + 1
@@ -81,19 +80,18 @@ class App extends Component {
     this.setState({
       simpsons: shuffledSimpsons
     })
-  
-  // scrample = () => {
-  //   const zeroScore = this.state.clickedCharacter.reset(function(){for (i = 0; i < id.length;i ++);
-  //}
-  }
+    // onClick = () => {
+    //   const eggScore = this.state.counter.reset()};
+    
+ }
 
   render() {
     return (
       <Wrapper>
         <Title>Simpsons Memory Game</Title>
         <div>
-        <Counter>Score</Counter>
-        {this.state.counter}
+          <Counter>Score</Counter>
+          {this.state.counter}
         </div>
         <div className="row">
           {this.state.simpsons.map(characters => (
